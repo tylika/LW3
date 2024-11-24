@@ -1,0 +1,117 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Tea Store Manager"
+             x:Class="LW3.MainPage"
+             BackgroundColor="#F4F1EA">
+
+    <ContentPage.Resources>
+        <!-- Styles -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#2A9D8F" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="12,8" />
+        </Style>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="#264653" />
+            <Setter Property="Margin" Value="0,5" />
+        </Style>
+        <Style x:Key="EntryStyle" TargetType="Entry">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="#264653" />
+            <Setter Property="BackgroundColor" Value="#E9C46A" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="PlaceholderColor" Value="Black" />
+        </Style>
+        <Style x:Key="GridHeaderStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="BackgroundColor" Value="#264653" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="Padding" Value="5,3" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <!-- Основна структура -->
+    <Grid RowDefinitions="Auto,*" ColumnDefinitions="*">
+        <!-- Верхня панель кнопок -->
+        <Grid Grid.Row="0" BackgroundColor="#F9FAFB" Padding="10" ColumnSpacing="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Text="About Project" x:Name="AboutProjectButton" Style="{StaticResource ButtonStyle}" Clicked="OnInfoPageClicked" />
+            <Button Grid.Column="1" Text="Upload File" x:Name="UploadTeaFileButton" Style="{StaticResource ButtonStyle}" Clicked="OnUploadFileClicked" />
+            <Button Grid.Column="2" Text="Search" x:Name="SearchTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnSearchTeaClicked" />
+            <Button Grid.Column="3" Text="Add Tea" x:Name="AddTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnAddTeaClicked" />
+            <Button Grid.Column="4" Text="Edit Tea" x:Name="EditTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnEditTeaClicked" />
+            <Button Grid.Column="5" Text="Remove Tea" x:Name="RemoveTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnRemoveTeaClicked" />
+            <Button Grid.Column="6" Text="Clear Filters" x:Name="ClearFiltersButton" Style="{StaticResource ButtonStyle}" Clicked="OnClearFiltersClicked" />
+        </Grid>
+
+        <!-- Основний контент -->
+        <Grid Grid.Row="1" RowDefinitions="*" ColumnDefinitions="*,3*">
+            <!-- Ліва панель (Фільтри) -->
+            <ScrollView Grid.Column="0" BackgroundColor="#F9FAFB" Padding="10">
+                <VerticalStackLayout Spacing="10">
+                    <VerticalStackLayout Spacing="5">
+                    <Entry Placeholder="Enter tea name" x:Name="FilterTeaNameEntry" Style="{StaticResource EntryStyle}" />
+                    <Entry Placeholder="Enter brand" x:Name="FilterBrandEntry" Style="{StaticResource EntryStyle}" />
+                    <Entry Placeholder="Enter category" x:Name="FilterCategoryEntry" Style="{StaticResource EntryStyle}" />
+                    <Entry Placeholder="Enter min price" x:Name="FilterMinPriceEntry" Keyboard="Numeric" Style="{StaticResource EntryStyle}" />
+                    <Entry Placeholder="Enter max price" x:Name="FilterMaxPriceEntry" Keyboard="Numeric" Style="{StaticResource EntryStyle}" />
+                    <Entry Placeholder="Enter year" x:Name="FilterYearEntry" Keyboard="Numeric" Style="{StaticResource EntryStyle}" />
+                    <Entry Placeholder="Enter stock count" x:Name="FilterStockEntry" Keyboard="Numeric" Style="{StaticResource EntryStyle}" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- Права панель (JSON Grid) -->
+            <ScrollView Grid.Column="1" Orientation="Both" BackgroundColor="#FFFFFF">
+                <VerticalStackLayout Spacing="10" Padding="5">
+                    <!-- Заголовки колонок -->
+                    <Grid ColumnDefinitions="*,*,*,*,*,*,*">
+                        <Label Text="ID" Style="{StaticResource GridHeaderStyle}" Grid.Column="0" />
+                        <Label Text="Tea Name" Style="{StaticResource GridHeaderStyle}" Grid.Column="1" />
+                        <Label Text="Brand" Style="{StaticResource GridHeaderStyle}" Grid.Column="2" />
+                        <Label Text="Price ($)" Style="{StaticResource GridHeaderStyle}" Grid.Column="3" />
+                        <Label Text="Year" Style="{StaticResource GridHeaderStyle}" Grid.Column="4" />
+                        <Label Text="Category" Style="{StaticResource GridHeaderStyle}" Grid.Column="5" />
+                        <Label Text="Stock" Style="{StaticResource GridHeaderStyle}" Grid.Column="6" />
+                    </Grid>
+
+                    <!-- Дані -->
+                    <CollectionView x:Name="TeaCollectionView"
+                        ItemsSource="{Binding Teas}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedTea, Mode=TwoWay}"
+                        SelectionChanged="OnTeaSelectionChanged">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="*,*,*,*,*,*,*" Padding="5">
+                                    <Label Text="{Binding Id}" Style="{StaticResource LabelStyle}" Grid.Column="0" />
+                                    <Label Text="{Binding Name}" Style="{StaticResource LabelStyle}" Grid.Column="1" />
+                                    <Label Text="{Binding Brand}" Style="{StaticResource LabelStyle}" Grid.Column="2" />
+                                    <Label Text="{Binding Price, StringFormat='{0:N2}'}" Style="{StaticResource LabelStyle}" Grid.Column="3" />
+                                    <Label Text="{Binding Year}" Style="{StaticResource LabelStyle}" Grid.Column="4" />
+                                    <Label Text="{Binding Category}" Style="{StaticResource LabelStyle}" Grid.Column="5" />
+                                    <Label Text="{Binding Stock}" Style="{StaticResource LabelStyle}" Grid.Column="6" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </ScrollView>
+
+        </Grid>
+    </Grid>
+</ContentPage>

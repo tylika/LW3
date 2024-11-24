@@ -1,0 +1,65 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LW3.AddTeaPage"
+             Title="Add New Tea">
+    <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#FFF4E5">
+
+        <!-- Заголовок -->
+        <Frame BackgroundColor="#D4A373" Padding="10" CornerRadius="12">
+            <Label Text="Add a New Tea"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center" />
+        </Frame>
+
+        <!-- Поля вводу -->
+        <Entry x:Name="NameEntry"
+               Placeholder="Tea Name"
+               BackgroundColor="#FFE8CC"
+               TextColor="#5C3D2E"
+               PlaceholderColor="#A67B5B" />
+
+        <Entry x:Name="BrandEntry"
+               Placeholder="Brand"
+               BackgroundColor="#FFE8CC"
+               TextColor="#5C3D2E"
+               PlaceholderColor="#A67B5B" />
+
+        <Entry x:Name="PriceEntry"
+               Placeholder="Price ($)"
+               Keyboard="Numeric"
+               BackgroundColor="#FFE8CC"
+               TextColor="#5C3D2E"
+               PlaceholderColor="#A67B5B" />
+
+        <Entry x:Name="YearEntry"
+               Placeholder="Harvest Year"
+               Keyboard="Numeric"
+               BackgroundColor="#FFE8CC"
+               TextColor="#5C3D2E"
+               PlaceholderColor="#A67B5B" />
+
+        <Entry x:Name="CategoryEntry"
+               Placeholder="Category (e.g., Green, Black)"
+               BackgroundColor="#FFE8CC"
+               TextColor="#5C3D2E"
+               PlaceholderColor="#A67B5B" />
+
+        <Entry x:Name="StockEntry"
+               Placeholder="Stock Quantity"
+               Keyboard="Numeric"
+               BackgroundColor="#FFE8CC"
+               TextColor="#5C3D2E"
+               PlaceholderColor="#A67B5B" />
+
+        <!-- Кнопка збереження -->
+        <Button Text="Save"
+                Clicked="OnSaveTeaClicked"
+                BackgroundColor="#D4A373"
+                TextColor="White"
+                CornerRadius="10"
+                Padding="10" />
+
+    </VerticalStackLayout>
+</ContentPage>

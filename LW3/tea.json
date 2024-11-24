@@ -1,0 +1,182 @@
+[
+  {
+    "Id": 1,
+    "Name": "Sencha Green Tea",
+    "Brand": "Kyoto Tea Co.",
+    "Price": 15.99,
+    "Year": 2023,
+    "Category": "Green Tea",
+    "Stock": 50
+  },
+  {
+    "Id": 2,
+    "Name": "Darjeeling First Flush",
+    "Brand": "Himalayan Estate",
+    "Price": 25.99,
+    "Year": 2023,
+    "Category": "Black Tea",
+    "Stock": 30
+  },
+  {
+    "Id": 3,
+    "Name": "Chamomile Herbal Tea",
+    "Brand": "Nature's Blend",
+    "Price": 12.99,
+    "Year": 2023,
+    "Category": "Herbal Tea",
+    "Stock": 100
+  },
+  {
+    "Id": 4,
+    "Name": "Jasmine Pearl",
+    "Brand": "Oriental Delights",
+    "Price": 19.99,
+    "Year": 2023,
+    "Category": "Flavored Tea",
+    "Stock": 40
+  },
+  {
+    "Id": 5,
+    "Name": "Earl Grey",
+    "Brand": "British Tradition",
+    "Price": 17.99,
+    "Year": 2023,
+    "Category": "Black Tea",
+    "Stock": 60
+  },
+  {
+    "Id": 6,
+    "Name": "Matcha Premium",
+    "Brand": "Kyoto Tea Co.",
+    "Price": 29.99,
+    "Year": 2023,
+    "Category": "Green Tea",
+    "Stock": 25
+  },
+  {
+    "Id": 7,
+    "Name": "English Breakfast",
+    "Brand": "British Tradition",
+    "Price": 14.99,
+    "Year": 2023,
+    "Category": "Black Tea",
+    "Stock": 70
+  },
+  {
+    "Id": 8,
+    "Name": "Rooibos",
+    "Brand": "African Sunset",
+    "Price": 13.99,
+    "Year": 2023,
+    "Category": "Herbal Tea",
+    "Stock": 85
+  },
+  {
+    "Id": 9,
+    "Name": "White Peony",
+    "Brand": "Oriental Delights",
+    "Price": 21.99,
+    "Year": 2023,
+    "Category": "White Tea",
+    "Stock": 35
+  },
+  {
+    "Id": 10,
+    "Name": "Pu-erh Tea Cake",
+    "Brand": "Yunnan Vintage",
+    "Price": 45.99,
+    "Year": 2023,
+    "Category": "Fermented Tea",
+    "Stock": 20
+  },
+  {
+    "Id": 11,
+    "Name": "Peppermint Tea",
+    "Brand": "Nature's Blend",
+    "Price": 11.99,
+    "Year": 2023,
+    "Category": "Herbal Tea",
+    "Stock": 90
+  },
+  {
+    "Id": 12,
+    "Name": "Oolong Tea",
+    "Brand": "Taiwan Finest",
+    "Price": 23.99,
+    "Year": 2023,
+    "Category": "Oolong Tea",
+    "Stock": 40
+  },
+  {
+    "Id": 13,
+    "Name": "Assam Strong Brew",
+    "Brand": "Himalayan Estate",
+    "Price": 16.99,
+    "Year": 2023,
+    "Category": "Black Tea",
+    "Stock": 55
+  },
+  {
+    "Id": 14,
+    "Name": "Hibiscus Tea",
+    "Brand": "Nature's Blend",
+    "Price": 14.49,
+    "Year": 2023,
+    "Category": "Herbal Tea",
+    "Stock": 80
+  },
+  {
+    "Id": 15,
+    "Name": "Lemon Ginger Tea",
+    "Brand": "Wellness Infusion",
+    "Price": 15.99,
+    "Year": 2023,
+    "Category": "Flavored Tea",
+    "Stock": 65
+  },
+  {
+    "Id": 16,
+    "Name": "Gunpowder Green Tea",
+    "Brand": "Kyoto Tea Co.",
+    "Price": 18.99,
+    "Year": 2023,
+    "Category": "Green Tea",
+    "Stock": 50
+  },
+  {
+    "Id": 17,
+    "Name": "Turmeric Tea",
+    "Brand": "Wellness Infusion",
+    "Price": 13.99,
+    "Year": 2023,
+    "Category": "Herbal Tea",
+    "Stock": 75
+  },
+  {
+    "Id": 18,
+    "Name": "Ceylon Tea",
+    "Brand": "Island Brews",
+    "Price": 19.49,
+    "Year": 2023,
+    "Category": "Black Tea",
+    "Stock": 45
+  },
+  {
+    "Id": 19,
+    "Name": "Genmaicha",
+    "Brand": "Kyoto Tea Co.",
+    "Price": 17.99,
+    "Year": 2023,
+    "Category": "Green Tea",
+    "Stock": 60
+  },
+  {
+    "Id": 20,
+    "Name": "Lapsang Souchong",
+    "Brand": "Oriental Delights",
+    "Price": 22.99,
+    "Year": 2023,
+    "Category": "Smoked Tea",
+    "Stock": 30
+  }
+]

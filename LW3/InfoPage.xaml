@@ -1,0 +1,87 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LW3.InfoPage"
+             Title="About Tea Store">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="#FFF4E5">
+
+            <!-- Заголовок сторінки -->
+            <Frame BackgroundColor="#D4A373" Padding="20" CornerRadius="12">
+                <Label Text="Welcome to Tea Store"
+                       FontSize="28"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center" />
+            </Frame>
+
+            <!-- Інформація про магазин -->
+            <Frame Padding="15" CornerRadius="12" BackgroundColor="#FFE8CC" BorderColor="#E0B084">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="☕ About Us:"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#5C3D2E" />
+                    <Label Text="Tea Store is your go-to place for premium teas from around the world. Explore a wide variety of green, black, herbal, and specialty teas tailored to your taste."
+                           FontSize="16"
+                           LineBreakMode="WordWrap"
+                           TextColor="#5C3D2E" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Інформація про додаток -->
+            <Frame Padding="15" CornerRadius="12" BackgroundColor="#FFE8CC" BorderColor="#E0B084">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="📱 App Features:"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#5C3D2E" />
+                    <Label Text="✔️ Manage your tea inventory with ease."
+                           FontSize="16"
+                           TextColor="#5C3D2E" />
+                    <Label Text="✔️ Add, edit, and delete tea details."
+                           FontSize="16"
+                           TextColor="#5C3D2E" />
+                    <Label Text="✔️ Search and filter teas by name, category, or price."
+                           FontSize="16"
+                           TextColor="#5C3D2E" />
+                    <Label Text="✔️ View tea details in a user-friendly format."
+                           FontSize="16"
+                           TextColor="#5C3D2E" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Дякуємо -->
+            <Frame Padding="15" CornerRadius="12" BackgroundColor="#D4A373" BorderColor="#A67B5B">
+                <Label Text="Thank you for visiting Tea Store. We hope you enjoy discovering your next favorite tea!"
+                       FontSize="16"
+                       FontAttributes="Italic"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center" />
+            </Frame>
+
+            <!-- Інформація про автора -->
+            <Frame Padding="15" CornerRadius="12" BackgroundColor="#FFF4E5" BorderColor="#E0B084">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="👨‍💻 About the Author:"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#5C3D2E" />
+                    <Label Text="Name: Buriak Yuliana"
+                           FontSize="16"
+                           TextColor="#5C3D2E" />
+                    <Label Text="Course: 2rd year, Computer Science"
+                           FontSize="16"
+                           TextColor="#5C3D2E" />
+                    <Label Text="Group: K-26"
+                           FontSize="16"
+                           TextColor="#5C3D2E" />
+                    <Label Text="Year: 2024"
+                           FontSize="16"
+                           TextColor="#5C3D2E" />
+                    
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
