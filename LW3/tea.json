@@ -36,15 +36,6 @@
     "Stock": 40
   },
   {
-    "Id": 5,
-    "Name": "Earl Grey",
-    "Brand": "British Tradition",
-    "Price": 17.99,
-    "Year": 2023,
-    "Category": "Black Tea",
-    "Stock": 60
-  },
-  {
     "Id": 6,
     "Name": "Matcha Premium",
     "Brand": "Kyoto Tea Co.",
