@@ -44,6 +44,7 @@
             <ScrollView Grid.Column="0" BackgroundColor="#F9FAFB" Padding="10">
                 <VerticalStackLayout Spacing="10">
                     <VerticalStackLayout Spacing="5">
+                        <Label Text ="Select search filters" Style="{StaticResource LabelStyle}" FontSize="Medium"></Label>
                     <Entry Placeholder="Enter tea name" x:Name="FilterTeaNameEntry" Style="{StaticResource EntryStyle}" />
                     <Entry Placeholder="Enter brand" x:Name="FilterBrandEntry" Style="{StaticResource EntryStyle}" />
                     <Entry Placeholder="Enter category" x:Name="FilterCategoryEntry" Style="{StaticResource EntryStyle}" />

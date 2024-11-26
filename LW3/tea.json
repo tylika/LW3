@@ -9,15 +9,6 @@
     "Stock": 50
   },
   {
-    "Id": 2,
-    "Name": "Darjeeling First Flush",
-    "Brand": "Himalayan Estate",
-    "Price": 25.99,
-    "Year": 2023,
-    "Category": "Black Tea",
-    "Stock": 30
-  },
-  {
     "Id": 3,
     "Name": "Chamomile Herbal Tea",
     "Brand": "Nature's Blend",
