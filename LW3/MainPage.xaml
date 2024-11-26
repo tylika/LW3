@@ -36,30 +36,10 @@
     </ContentPage.Resources>
 
     <!-- Основна структура -->
-    <Grid RowDefinitions="Auto,*" ColumnDefinitions="*">
-        <!-- Верхня панель кнопок -->
-        <Grid Grid.Row="0" BackgroundColor="#F9FAFB" Padding="10" ColumnSpacing="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Button Grid.Column="0" Text="About Project" x:Name="AboutProjectButton" Style="{StaticResource ButtonStyle}" Clicked="OnInfoPageClicked" />
-            <Button Grid.Column="1" Text="Upload File" x:Name="UploadTeaFileButton" Style="{StaticResource ButtonStyle}" Clicked="OnUploadFileClicked" />
-            <Button Grid.Column="2" Text="Search" x:Name="SearchTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnSearchTeaClicked" />
-            <Button Grid.Column="3" Text="Add Tea" x:Name="AddTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnAddTeaClicked" />
-            <Button Grid.Column="4" Text="Edit Tea" x:Name="EditTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnEditTeaClicked" />
-            <Button Grid.Column="5" Text="Remove Tea" x:Name="RemoveTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnRemoveTeaClicked" />
-            <Button Grid.Column="6" Text="Clear Filters" x:Name="ClearFiltersButton" Style="{StaticResource ButtonStyle}" Clicked="OnClearFiltersClicked" />
-        </Grid>
-
+    <Grid RowDefinitions="*,auto" ColumnDefinitions="*">
+        
         <!-- Основний контент -->
-        <Grid Grid.Row="1" RowDefinitions="*" ColumnDefinitions="*,3*">
+        <Grid Grid.Row="0" RowDefinitions="*" ColumnDefinitions="*,3*">
             <!-- Ліва панель (Фільтри) -->
             <ScrollView Grid.Column="0" BackgroundColor="#F9FAFB" Padding="10">
                 <VerticalStackLayout Spacing="10">
@@ -112,6 +92,25 @@
                 </VerticalStackLayout>
             </ScrollView>
 
+        </Grid>
+        <Grid Grid.Row="1" BackgroundColor="#F9FAFB" Padding="10" ColumnSpacing="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Text="About Project" x:Name="AboutProjectButton" Style="{StaticResource ButtonStyle}" Clicked="OnInfoPageClicked" />
+            <Button Grid.Column="1" Text="Upload File" x:Name="UploadTeaFileButton" Style="{StaticResource ButtonStyle}" Clicked="OnUploadFileClicked" />
+            <Button Grid.Column="2" Text="Search" x:Name="SearchTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnSearchTeaClicked" />
+            <Button Grid.Column="3" Text="Add Tea" x:Name="AddTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnAddTeaClicked" />
+            <Button Grid.Column="4" Text="Edit Tea" x:Name="EditTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnEditTeaClicked" />
+            <Button Grid.Column="5" Text="Remove Tea" x:Name="RemoveTeaButton" Style="{StaticResource ButtonStyle}" Clicked="OnRemoveTeaClicked" />
+            <Button Grid.Column="6" Text="Clear Filters" x:Name="ClearFiltersButton" Style="{StaticResource ButtonStyle}" Clicked="OnClearFiltersClicked" />
         </Grid>
     </Grid>
 </ContentPage>

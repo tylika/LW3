@@ -110,27 +110,55 @@ public partial class MainPage : ContentPage
     {
         var filteredTeas = _teas.AsEnumerable();
 
-        if (!string.IsNullOrWhiteSpace(FilterTeaNameEntry.Text))
-            filteredTeas = filteredTeas.Where(tea => tea.Name.Contains(FilterTeaNameEntry.Text, StringComparison.OrdinalIgnoreCase));
+        // Валідація та фільтрація за назвою чаю
+        var teaNameFilter = FilterTeaNameEntry.Text;
+        if (!string.IsNullOrWhiteSpace(teaNameFilter))
+        {
+            filteredTeas = filteredTeas.Where(tea =>
+                tea.Name.Contains(teaNameFilter, StringComparison.OrdinalIgnoreCase));
+        }
 
-        if (!string.IsNullOrWhiteSpace(FilterBrandEntry.Text))
-            filteredTeas = filteredTeas.Where(tea => tea.Brand.Contains(FilterBrandEntry.Text, StringComparison.OrdinalIgnoreCase));
+        // Валідація та фільтрація за брендом
+        var brandFilter = FilterBrandEntry.Text;
+        if (!string.IsNullOrWhiteSpace(brandFilter))
+        {
+            filteredTeas = filteredTeas.Where(tea =>
+                tea.Brand.Contains(brandFilter, StringComparison.OrdinalIgnoreCase));
+        }
 
-        if (!string.IsNullOrWhiteSpace(FilterCategoryEntry.Text))
-            filteredTeas = filteredTeas.Where(tea => tea.Category.Contains(FilterCategoryEntry.Text, StringComparison.OrdinalIgnoreCase));
+        // Валідація та фільтрація за категорією
+        var categoryFilter = FilterCategoryEntry.Text;
+        if (!string.IsNullOrWhiteSpace(categoryFilter))
+        {
+            filteredTeas = filteredTeas.Where(tea =>
+                tea.Category.Contains(categoryFilter, StringComparison.OrdinalIgnoreCase));
+        }
 
-        if (double.TryParse(FilterMinPriceEntry.Text, out var minPrice))
+        // Валідація та фільтрація за мінімальною ціною
+        if (double.TryParse(FilterMinPriceEntry.Text, out var minPrice) && minPrice >= 0)
+        {
             filteredTeas = filteredTeas.Where(tea => tea.Price >= minPrice);
+        }
 
-        if (double.TryParse(FilterMaxPriceEntry.Text, out var maxPrice))
+        // Валідація та фільтрація за максимальною ціною
+        if (double.TryParse(FilterMaxPriceEntry.Text, out var maxPrice) && maxPrice >= 0)
+        {
             filteredTeas = filteredTeas.Where(tea => tea.Price <= maxPrice);
+        }
 
-        if (int.TryParse(FilterYearEntry.Text, out var year))
+        // Валідація та фільтрація за роком
+        if (int.TryParse(FilterYearEntry.Text, out var year) && year > 0)
+        {
             filteredTeas = filteredTeas.Where(tea => tea.Year == year);
+        }
 
-        if (int.TryParse(FilterStockEntry.Text, out var stock))
+        // Валідація та фільтрація за кількістю на складі
+        if (int.TryParse(FilterStockEntry.Text, out var stock) && stock >= 0)
+        {
             filteredTeas = filteredTeas.Where(tea => tea.Stock >= stock);
+        }
 
+        // Присвоєння відфільтрованої колекції до джерела
         TeaCollectionView.ItemsSource = filteredTeas.ToList();
     }
 
